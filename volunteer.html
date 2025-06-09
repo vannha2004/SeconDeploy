@@ -299,40 +299,28 @@
   </form>
 
   <script>
-    const form = document.getElementById('volunteer-form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  const form = document.getElementById('volunteer-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      const formData = {
-        name: form.name.value,
-        role: form.role.value,
-        experience: form.experience.value,
-        suggestions: form.suggestions.value,
-        continue: form.continue.value
-      };
+    const formData = new FormData(form);
 
-      fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.result === 'success') {
-          alert('Cảm ơn bạn đã gửi phản hồi!');
-          form.reset();
-        } else {
-          alert('Đã có lỗi xảy ra!');
-        }
-      })
-      .catch(err => {
-        alert('Lỗi khi gửi dữ liệu!');
-        console.error(err);
-      });
+    fetch('https://script.google.com/macros/s/AKfycby2K0xKxUpSWFm8_V9IWhwTMrcX5yb4Ls0X4ZUar0U/dev', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.text()) // Apps Script trả về text chứ không phải JSON
+    .then(data => {
+      alert('Cảm ơn bạn đã gửi phản hồi!');
+      form.reset();
+    })
+    .catch(err => {
+      alert('Lỗi khi gửi dữ liệu!');
+      console.error(err);
     });
-  </script>
+  });
+</script>
+
 </body>
 
 </html>
