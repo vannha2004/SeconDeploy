@@ -301,15 +301,24 @@
   <script>
   const form = document.getElementById('volunteer-form');
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData(form);
+  const formData = {
+    name: form.name.value,
+    role: form.role.value,
+    experience: form.experience.value,
+    suggestions: form.suggestions.value,
+    continue: form.continue.value
+  };
 
-    fetch('https://script.google.com/macros/s/AKfycby2K0xKxUpSWFm8_V9IWhwTMrcX5yb4Ls0X4ZUar0U/dev', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.text()) // Apps Script trả về text chứ không phải JSON
+  fetch('https://script.google.com/macros/s/AKfycby2K0xKxUpSWFm8_V9IWhwTMrcX5yb4Ls0X4ZUar0U/dev', {
+    method: 'POST',
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => res.text())
     .then(data => {
       alert('Cảm ơn bạn đã gửi phản hồi!');
       form.reset();
@@ -318,7 +327,8 @@
       alert('Lỗi khi gửi dữ liệu!');
       console.error(err);
     });
-  });
+});
+
 </script>
 
 </body>
