@@ -2,52 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Year-End Summary</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The RainBow Class</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
   <header>
-    <nav class="container" role="navigation" aria-label="Main navigation">
-      <div class="logo" tabindex="0">
-        <img src="./logo_rainbow2.png" alt="">
+    <nav class="container">
+      <div class="logo">
+        <img src="./logo_rainbow.jpg" alt="Logo">
         <p>The RainBow Class</p>
       </div>
       <div class="nav-links">
-        <a href="#achievements" tabindex="0">Thành tựu</a>
-        <a href="#highlights" tabindex="0">Đáng chú ý</a>
-        <a href="#plans" tabindex="0">Mục tiêu</a>
-        <a href="./volunteer.html" tabindex="0">Báo cáo</a>
-        <a href="./contact.html" target="_blank" tabindex="0">Liên hệ</a>
+        <a href="#achievements">Học tập</a>
+        <a href="#activities">Tương tác</a>
+        <a href="#goals">Vận hành</a>
+        <a href="./volunteer.html">Báo cáo</a>
+        <a href="./contact.html" target="_blank">Liên hệ</a>
       </div>
     </nav>
   </header>
 
-  <main class="container" role="main">
-    <section class="hero" aria-label="Hero section with year end summary introduction">
+  <section class="hero">
+    <div class="container">
       <h1>Thành tựu qua 1 năm học vừa rồi của lớp Hàn Gắn chúng ta</h1>
-      <p>Lớp hàn gắn: Lớp học được mở ra để hỗ trợ các trẻ em bị ảnh hưởng bởi dịch bệnh, hướng tới các em có gia cảnh
+      <p>Lớp Hàn Gắn: Lớp học được mở ra để hỗ trợ các trẻ em bị ảnh hưởng bởi dịch bệnh, hướng tới các em có gia cảnh
         khó khăn, vô gia cư, hoặc bị bạo hành</p>
-      <button class="btn-primary" data-scroll="achievements" aria-label="Browse achievements section">Truy cập thành
-        tựu</button>
-    </section>
+      <button class="btn-primary" data-scroll="achievements">Truy cập thành tựu</button>
+    </div>
+  </section>
 
-    <section id="achievements" aria-label="List of key achievements">
-      <h2>Hoạt động, nội dung đã thực hiện</h2>
+  <section id="achievements">
+    <div class="container">
+      <h2> 1. Kết quả học tập và sự tiến bộ của học sinh</h2>
       <div class="cards-grid">
-        <article class="card" tabindex="0">
+        <div class="card">
           <h3>Học sinh</h3>
           <ul>
             <li><strong>Học tập:</strong> Nhiều học sinh tiến bộ rõ rệt như <em>Nguyễn Quỳnh Nhi</em>, <em>Tạ Bảo
                 Vy</em>; một số thụt lùi như <em>Đào Phương Nhi</em>, <em>Trần Thị Mai</em>.</li>
+            <li><strong>Học tốt ổn định:</strong> <em>Đào Trung Hiếu</em>, <em>Phạm Quỳnh Anh</em>, <em>Trần Diệp
+                Anh</em>, <em>Hoàng Hạnh Dung</em>, <em>Hoàng Minh Minh</em>, <em>Trần Nguyễn Bảo Châu</em>.</li>
             <li><strong>Thái độ:</strong> Đa phần nghiêm túc, nhưng vẫn còn học sinh lười học. Đặc biệt <em>Đào Phương
                 Nhi</em> thường xuyên nghỉ không lý do, đang bị cảnh báo.</li>
           </ul>
-        </article>
+        </div>
+<div class="card">
+  <h3>Kết quả học tập</h3>
 
-        <article class="card" tabindex="0">
+  <h4>Học kỳ I</h4>
+  <ul>
+    <li>6/23 học sinh đạt khá giỏi.</li>
+    <li>5 học sinh dưới trung bình.</li>
+    <li><strong>Điểm trung bình:</strong> Toán 7,58 – Văn 7,68 – Anh 6,13.</li>
+  </ul>
+
+  <h4>Học kỳ II</h4>
+  <ul>
+    <li>9/23 học sinh đạt khá giỏi (tăng so với kỳ I).</li>
+    <li>Chỉ còn 2 học sinh dưới trung bình.</li>
+    <li><strong>Điểm trung bình:</strong> Toán 7,57 – Văn 7,70 – Anh 6,75.</li>
+  </ul>
+
+  <h4>Ghi nhận</h4>
+  <ul>
+    <li>10 học sinh nhận thưởng (chiếm 43.48%).</li>
+    <li>Tăng đáng kể so với học kỳ trước (8.7%).</li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <div class="container">
+      <h2>2. Tình hình lớp học: Phụ huynh – Học sinh – Tình nguyện viên</h2>
+      <div class="cards-grid">
+        <div class="card">
           <h3>Phụ huynh</h3>
           <ul>
             <li>Phối hợp nhìn chung tốt, phần lớn hỗ trợ lớp học.</li>
@@ -55,38 +90,16 @@
             <li>Phụ huynh tích cực đăng ký hoạt động cho con: <em>Nguyễn Ngọc Dũng</em>, <em>Nguyễn Ngọc Huyền</em>.
             </li>
           </ul>
-        </article>
-
-        <article class="card" tabindex="0">
+        </div>
+        <div class="card">
           <h3>Tình nguyện viên</h3>
           <ul>
             <li>Nhiều TNV bị nhắc về báo cáo như <em>Hoài Anh</em>, <em>Diệu Linh</em>.</li>
-            <li>Một số nghỉ không báo.</li>
-            <li><strong>Tuyên dương:</strong> TNV <em>Trâm Anh</em> vì duy trì dạy học dù gặp khó khăn.</li>
+            <li>Một số nghỉ không báo trước, thậm chí có trường hợp gian dối.</li>
+            <li>Tuyên dương: TNV <em>Trâm Anh</em> vì duy trì dạy học dù gặp khó khăn.</li>
           </ul>
-
-        </article>
-        <article class="card" tabindex="0">
-          <h3>Ban quản lý</h3>
-          <p>Hoàn thành 90% các nhiệm vụ được giao, tích cực trong công tác hỗ trợ, thông báo sự kiện tới phụ huynh.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="highlights" aria-label="Additional highlights from the year">
-      <h2>Kết quả & đánh giá</h2>
-      <div class="cards-grid">
-        <article class="card" tabindex="0">
-          <h3>Kết quả học tập</h3>
-          <ul>
-            <li><strong>Học kỳ I:</strong> 6/23 học sinh khá giỏi, 5 học sinh dưới trung bình.</li>
-            <li>Điểm trung bình: Toán 7,58 – Văn 7,68 – Anh 6,13.</li>
-            <li><strong>Học kỳ II:</strong> 9/23 học sinh khá giỏi, chỉ còn 2 học sinh dưới trung bình.</li>
-            <li>Điểm trung bình tăng nhẹ: Toán 7,57 – Văn 7,70 – Anh 6,75.</li>
-          </ul>
-        </article>
-
-        <article class="card" tabindex="0">
+        </div>
+        <div class="card">
           <h3>Biến động nhân sự</h3>
           <ul>
             <li><strong>Học sinh:</strong> Thêm 3 học sinh mới, 5 học sinh rời lớp do lười học, nghỉ nhiều hoặc phụ
@@ -94,84 +107,90 @@
             <li><strong>Tình nguyện viên:</strong> Có trường hợp gian dối, nghỉ đột xuất, thiếu báo cáo.</li>
             <li>Sau mỗi kỳ nghỉ dài, nhiều TNV tiếp tục xin nghỉ thêm.</li>
           </ul>
-        </article>
-
-        <article class="card" tabindex="0">
-          <h3>Art Exhibition</h3>
-          <p>Hosted a successful school-wide art exhibition showcasing student creativity and diversity.</p>
-        </article>
+        </div>
       </div>
-    </section>
+      <canvas id="performanceChart" width="400" height="200"></canvas>
+    </div>
+  </section>
 
-    <section id="plans" aria-label="Plans and goals for the next school year">
-      <h2 style="color: rgb(9, 139, 22);">Nhận xét, khó khăn & định hướng</h2>
+  <section id="goals">
+    <div class="container">
+      <h2>3. Nhận xét, Bài học & Định hướng</h2>
       <div class="cards-grid">
-        <article class="card" tabindex="0">
-          <h3>Bài học kinh nghiệm</h3>
+        <div class="card">
+          <h3>Bài học & quản lý</h3>
           <ul>
-            <li>Tổ chức lớp hiệu quả nhờ phân công rõ giữa lớp trưởng và lớp phó.</li>
-            <li>Tăng cường kết nối giữa PH – HS – TNV qua nhóm chung.</li>
-            <li>Kiên quyết xử lý TNV vi phạm: nhắc riêng, cho vào blacklist nếu không cải thiện.</li>
-            <li>Cải thiện quản lý bằng cách đổi tên TNV theo quy chuẩn và cập nhật dữ liệu thường xuyên.</li>
+            <li>Phân công rõ giữa lớp trưởng và lớp phó giúp tăng hiệu quả.</li>
+            <li>Tạo nhóm chung PH – HS – TNV giúp lớp theo dõi sát sao.</li>
+            <li>Áp dụng biện pháp quyết liệt: nhắc riêng, blacklist nếu cần.</li>
+            <li>Quản lý TNV tốt hơn qua việc đổi tên, cập nhật thông tin, xử lý gian dối.</li>
           </ul>
-        </article>
-
-        <article class="card" tabindex="0">
+        </div>
+        <div class="card">
           <h3>Khó khăn</h3>
           <ul>
             <li><strong>Học sinh:</strong> Không hợp tác, quên lịch học, huỷ học phút chót.</li>
             <li><strong>Phụ huynh:</strong> Hủy/hoãn lịch học đột ngột, khó liên lạc.</li>
-            <li><strong>Tình nguyện viên:</strong> Bị nhắc nhở nhiều lần về báo cáo sơ sài, nghỉ dạy không báo trước.
-            </li>
+            <li><strong>TNV:</strong> Báo cáo sơ sài, nghỉ không báo trước, nhiều người bỏ dạy giữa chừng.</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="card" tabindex="0">
-          <h3>Kế hoạch & định hướng</h3>
+        <div class="card">
+          <h3>Định hướng</h3>
           <ul>
-            <li>Nhắc TNV hoàn thành báo cáo đúng hạn và đầy đủ.</li>
-            <li>Phổ biến kỹ nội quy lớp học ngay từ giai đoạn phỏng vấn TNV.</li>
-            <li>Tăng tương tác giữa Ban quản lý và lớp học.</li>
-            <li><strong>Mục tiêu:</strong> 80% học sinh khá giỏi; không còn HS/TNV vi phạm nội quy; tăng hỗ trợ TNV (cấp
-              chứng chỉ, tạo điều kiện tham gia hoạt động).</li>
+            <li>LT & LP nhắc TNV báo cáo đúng hạn, đầy đủ.</li>
+            <li>Phổ biến kỹ nội quy từ vòng phỏng vấn TNV.</li>
+            <li>Tăng tương tác giữa BQL – lớp – PH – TNV.</li>
+            <li><strong>Mục tiêu:</strong> 80% học sinh khá giỏi, không còn HS/TNV vi phạm, tăng hỗ trợ TNV (chứng chỉ,
+              hoạt động).</li>
           </ul>
-        </article>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Phần phân tích cuối năm: đặt sau main, trước footer -->
-  <section id="report" aria-label="Summary and data visualization">
-    <div class="container">
-      <h2>TỔNG KẾT</h2>
-      <div class="cards-grid">
-        <article class="card">
-          <h3>Kết quả học tập</h3>
-          <p>Học kỳ II có 9/23 học sinh đạt khá giỏi (↑ từ 6), số dưới trung bình giảm từ 5 xuống còn 2.</p>
-        </article>
-        <article class="card">
-          <h3>Biến động nhân sự</h3>
-          <p>5 học sinh rời lớp, 3 học sinh mới. Một số TNV nghỉ dạy, vi phạm nội quy.</p>
-        </article>
-        <article class="card">
-          <h3>Đề xuất cải thiện</h3>
-          <p>Tăng hỗ trợ TNV, tăng giám sát HS & PH. Cải thiện báo cáo, răn đe TNV gian dối.</p>
-        </article>
-      </div>
-
-      <div style="margin-top: 4rem;">
-        <canvas id="performanceChart" width="400" height="200" aria-label="Biểu đồ kết quả học tập" role="img"></canvas>
+        </div>
       </div>
     </div>
   </section>
 
+
+  <section id="contact">
+    <div class="container">
+      <h2>TỔNG KẾT</h2>
+      <div class="cards-grid">
+  <div class="card">
+    <h3>Kết quả học tập</h3>
+    <ul>
+      <li>Học kỳ II: 9/23 học sinh đạt khá giỏi (tăng từ 6 học sinh).</li>
+      <li>Số học sinh dưới trung bình giảm: từ 5 → còn 2.</li>
+      <li>Điểm trung bình tăng nhẹ ở tất cả các môn.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Biến động nhân sự</h3>
+    <ul>
+      <li>5 học sinh rời lớp do nghỉ nhiều hoặc PH không hợp tác.</li>
+      <li>3 học sinh mới chuyển đến (trong đó có chuyển hình thức học).</li>
+      <li>Nhiều TNV nghỉ dạy, thiếu báo cáo hoặc vi phạm nội quy.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Đề xuất cải thiện</h3>
+    <ul>
+      <li>Tăng hỗ trợ cho TNV (chứng chỉ, hoạt động lớp).</li>
+      <li>Nhắc nhở & kiểm tra báo cáo thường xuyên.</li>
+      <li>Răn đe TNV vi phạm – tránh báo cáo sơ sài, gian dối.</li>
+      <li>Tăng tương tác với PH & HS để nâng hiệu quả học tập.</li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </section>
+
   <footer>
-    &copy; 8th June 2025 Created by VanNha.
+    <p>© 8th June 2025 Created by VanNha.</p>
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

@@ -6,110 +6,121 @@
   <title>Form Tổng Kết Năm Học</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
 
+  form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 720px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 32px;
+    font-size: 1.8rem;
+  }
+
+  label {
+    display: block;
+    margin: 18px 0 6px;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    transition: 0.3s ease;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #3b82f6;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    display: block;
+    margin: 36px auto 0;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #4338ca, #2563eb);
+    transform: translateY(-1px);
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .back-button:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
     form {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 700px;
+      padding: 24px;
     }
 
     h2 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: 600;
-      color: #34495e;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      font-size: 1rem;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #3498db;
-      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical;
+      font-size: 1.5rem;
     }
 
     button {
-      display: block;
-      margin: 30px auto 0;
-      padding: 12px 30px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      width: 100%;
     }
+  }
+</style>
 
-    button:hover {
-      background-color: #2980b9;
-      transform: scale(1.03);
-    }
-
-    @media (max-width: 480px) {
-      form {
-        padding: 20px;
-      }
-
-      button {
-        width: 100%;
-      }
-    }
-
-    .back-button {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .back-button:hover {
-      color: #2c3e50;
-      text-decoration: underline;
-    }
-  </style>
 </head>
 
 <body>
@@ -153,7 +164,6 @@
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Show loading state
       const submitButton = form.querySelector('button[type="submit"]');
       const originalButtonText = submitButton.textContent;
       submitButton.textContent = 'Đang gửi...';
@@ -168,7 +178,6 @@
           continue: form.continue.value
         };
 
-        // First try with CORS headers (modern approach)
         const response = await fetchWithCorsFallback(
           'https://script.google.com/macros/s/AKfycbwQg7URXw37s6CQEfJJwwEZLMXAp-dC9YZa9MNNUMiGfvVoNHQTafxJ1noKkgQtfmLC/exec',
           {
@@ -192,21 +201,15 @@
         console.error('Submit error:', err);
         alert('Lỗi khi gửi dữ liệu: ' + (err.message || 'Vui lòng thử lại sau'));
       } finally {
-        // Restore button state
         submitButton.textContent = originalButtonText;
         submitButton.disabled = false;
       }
     });
 
-    /**
-     * Smart fetch with CORS fallback handling
-     */
     async function fetchWithCorsFallback(url, options) {
       try {
-        // First try regular fetch
         const response = await fetch(url, options);
 
-        // If we get a CORS error (response is opaque), try the fallback
         if (response.type === 'opaque') {
           return await corsFallback(url, options);
         }
@@ -219,32 +222,16 @@
       }
     }
 
-    /**
-     * Fallback method for CORS issues
-     */
     async function corsFallback(url, options) {
-      // Method 1: Try with no-cors mode (limited - can't read response)
       const noCorsResponse = await fetch(url, {
         ...options,
         mode: 'no-cors'
       });
-
-      // If we get here, the request was sent but we can't verify success
-      // Return a mock success response
       return {
         json: async () => ({ result: 'success' }),
         ok: true
       };
-
-      // Note: For more reliability, you could implement additional fallbacks here:
-      // - JSONP (for GET requests)
-      // - Proxy through a CORS-enabled service
     }
-
-    /**
-     * Alternative: Using Google Apps Script URL with /dev at the end
-     * This often has less strict CORS restrictions
-     */
     function getDevEndpoint(url) {
       return url.replace('/exec', '/dev');
     }
